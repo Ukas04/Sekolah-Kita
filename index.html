@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="css/onsenui.css">
+        <link rel="stylesheet" href="css/onsen-css-components.min.css">
+        <script src="js/onsenui.min.js"></script>
+        <script type="phonegap.js"></script>
+        <script type="text/javascript">
+            function onLoad(){
+                document.addEventListen("deviceready", onDeviceReady, true);
+            }
+            function exitFromApp(){
+                if(confirm("Apakah Yakin Ingin Keluar")){
+                    navigator.app.exitApp();
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <ons-splitter>
+            <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+                <ons-page>
+                    <ons-list>
+                        <ons-list-item onclick="fn.load('home.html')" tappable>
+                            Sekolah Kita
+                        </ons-list-item>
+                        <ons-list-item onclick="fn.load('sejarah.html')" tappable>
+                            Sejarah
+                        </ons-list-item>
+                        <ons-list-item onclick="fn.load('data.html')" tappable>
+                            Data Sekolah
+                        </ons-list-item>
+                        <hr>
+                        <ons-list-header>Info</ons-list-header>
+                        <ons-list-item onclick="fn.load('info.html')" tappable>
+                            Info
+                        </ons-list-item>
+                        <ons-list-item onclick="exitFromApp()" tappable>
+                            Keluar
+                        </ons-list-item>
+                    </ons-list>
+                </ons-page>
+            </ons-splitter-side>
+            <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+        </ons-splitter>
+
+        <template id="home.html">
+            <ons-page>
+                <ons-toolbar>
+                    <div class="left">
+                        <ons-toolbar-button onclick="fn.open()">
+                            <ons-icon icon="md-menu"></ons-icon>
+                        </ons-toolbar-button>
+                    </div>
+                    <div class="center">
+                        Sekolah Kita
+                    </div>
+                </ons-toolbar>
+                <ons-card>
+                    <img src="img/smk4pekalongan.jpg" alt="SMK" style="width: 100%">
+
+                    <div class="content">
+                        <p>Selamat Datang di Sekolah Kita. Disini anda akan mengenal tentang SMK Negeri 4 Pekalongan.
+                    </div>
+                </ons-card>
+            </ons-page>
+        </template>
+
+        <template id="sejarah.html">
+            <ons-page id="list-group">
+                <ons-toolbar>
+                    <div class="left">
+                        <ons-toolbar-button onclick="fn.open()">
+                            <ons-icon icon="md-menu"></ons-icon>
+                        </ons-toolbar-button>
+                    </div>
+                    <div class="center">
+                        Timeline Sejarah
+                    </div>
+                </ons-toolbar>
+                <section style="padding: 8px">
+                    <ons-list>
+                        <ons-list-item onclick="fn.load('asalmula.html')">
+                            <div class="left">
+                                <img class="list-item__thumbnail" src="img/asalmula.jpg">
+                            </div>
+                            <div class="center">
+                                <span class="list-item__title">SMK Negeri 4 Pekalongan</span>
+                                <span class="list-item__subtitle">Mulai Tahun 2012/2013</span>
+                            </div>
+                        </ons-list-item>
+                    </ons-list>
+                </section>
+            </ons-page>
+        </template>
+
+        <template id="data.html">
+            <ons-page>
+                <ons-toolbar>
+                    <div class="left">
+                        <ons-toolbar-button onclick="fn.open()">
+                            <ons-icon icon="md-menu"></ons-icon>
+                        </ons-toolbar-button>
+                    </div>
+                    <div class="center">
+                        Data Sekolah
+                    </div>
+                </ons-toolbar>
+                <section style="padding: 8px">
+                    <ons-list>
+                        <ons-list-item onclick="fn.load('visimisi.html')">
+                            <div class="center">
+                                <span class="list-item__title">Pedoman Sekolah</span>
+                                <span class="list-item__subtitle">Visi Misi</span>
+                            </div>
+                        </ons-list-item>
+                    </ons-list>
+                </section>
+            </ons-page>
+        </template>
+        <template id="info.html">
+            <ons-page>
+                <ons-toolbar>
+                    <div class="left">
+                        <ons-toolbar-button onclick="fn.open()">
+                            <ons-icon icon="md-menu"></ons-icon>
+                        </ons-toolbar-button>
+                    </div>
+                    <div class="center">
+                        Info
+                    </div>
+                </ons-toolbar>
+                <ons-card>
+                    <div class="title">
+                        Sekolah Kita
+                    </div>
+                    <div class="content">
+                        <p>SMK Negeri 4 Pekalongan</p>
+                        <p>Jl. Teknopolitan No. 1 Pekalongan</p>
+                    </div>
+                </ons-card>
+            </ons-page>
+        </template>
+        <template id="asalmula.html">
+            <ons-page>
+                <ons-toolbar>
+                    <div class="left">
+                        <ons-back-button onclick="fn.load('sejarah.html')">Kembali</ons-back-button>
+                    </div>
+                    <div class="center">
+                        Sejarah Sekolah
+                    </div>
+                </ons-toolbar>
+                <ons-card>
+                        <img src="img/asalmula.jpg" alt="asalmula" style="width: 100%">
+                        <div class="title">SMK Negeri 4 Pekalongan</div>
+                        <div class="subtitle">Mulai Tahun 2012/2013</div>
+                        <div class="content">
+                            <p>SMK Negeri 4 Pekalongan merupakan Sekolah Kejuruan Negeri ke-4 yang berdiri di Kota Pekalongan. Mulai beroperasi / membuka pendaftaran siswa baru pada tahun 2012/2013, pada saat mulai beroperasi sekolah ini hanya memiliki 2 Program Keahlian yaitu Teknik Ketenagalistrikan dan Budidaya Perikanan</p>
+                            <p>Letak SMK Negeri 4 Pekalongan sendiri berbeda / terpisah dari kompleks SMK Negeri lainnya, yaitu di Kecamatan Kuripan Lor, tempat yang saat ini menjadi unggulan karena aman / bebas dari banjir.</p>      
+                        </div>
+                    </ons-card>
+            </ons-page>
+        </template>
+        
+        <template id="visimisi.html">
+            <ons-page>
+                <ons-toolbar>
+                    <div class="left">
+                        <ons-back-button onclick="fn.load('data.html')">Kembali</ons-back-button>
+                    </div>
+                    <div class="center">
+                        Visi Misi Sekolah
+                    </div>
+                </ons-toolbar>
+                <ons-card>
+                        <img src="img/visimisi.jpg" alt="visimisi" style="width: 100%">
+                        <div class="title">Visi</div>
+                        <div class="content">
+                            <p>Menyiapkan tamatan yang berkualitas dan bertaqwa, cerdas, terampil, mandiri, dan bertanggungjawab terhadap Pembangunan Bangsa
+                            </p>
+                        </div>
+                        <div class="title">Misi</div>
+                        <div class="content">
+                            <p>1. Membekali pengetahuan ketrampilan dan sikap sebagai bekal dasar untuk pengembangan diri tamatan secara berkelanjutan.</p>
+                            <p>2. Menyiapkan tenaga kerja tingkat menengah yang berkualitas profesional untuk mengisi tuntutan Pembangunan dan Dunia Kerja
+                            </p>      
+                        </div>
+                    </ons-card>
+            </ons-page>
+        </template>
+
+        <script>
+            window.fn = {};
+
+            window.fn.open = function () {
+                var menu = document.getElementById('menu');
+                menu.open();
+            };
+
+            window.fn.load = function (page) {
+                var content = document.getElementById('content');
+                var menu = document.getElementById('menu');
+                content.load(page)
+                    .then(menu.close.bind(menu));
+            };
+            
+        </script>
+    </body>
+
+</html>
